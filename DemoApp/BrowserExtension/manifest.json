@@ -1,0 +1,26 @@
+{
+  "name": "Colorize it Extension",
+  "description": "Make web application beautiful again!",
+  "manifest_version": 2,
+  "version": "1.0",
+
+  "applications": {
+    "gecko": {
+      "id": "demo",
+      "strict_min_version": "60.0b5"
+    }
+  },
+
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "run_at": "document_end",
+      "js": [ "content.js" ]
+    }
+  ]
+
+}
