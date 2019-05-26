@@ -15,15 +15,15 @@ chrome.runtime.sendMessage({ target: "Red" }, function (response) {
 
 chrome.runtime.onMessage.addListener(request => {
     if (request.target === "setColor") {
-        window.document.body.style.backgroundColor = getRandomColor();
+        //window.document.body.style.backgroundColor = getRandomColor();
 
-        for (var button of window.document.getElementsByTagName("button")) {
-            console.log(button);
-            button.style.background = getRandomColor();
-        }
+        //for (var button of window.document.getElementsByTagName("button")) {
+        //    console.log(button);
+        //    button.style.background = getRandomColor();
+        //}
 
-        for (var div of window.document.getElementsByTagName("*")) {
-            div.style.backgroundColor = getRandomColor();
+        for (var element of window.document.getElementsByTagName("*")) {
+            element.style.backgroundColor = getRandomColor();
         }
 
         return Promise.resolve({ response: "Hi from content script" });
